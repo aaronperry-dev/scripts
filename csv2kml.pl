@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+#Usage: perl csv2kml.pl < in.csv > out.kml
+
 print '<?xml version="1.0" encoding="UTF-8"?>
     <kml xmlns="http://earth.google.com/kml/2.0">
     <Document>
