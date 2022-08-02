@@ -1,3 +1,5 @@
+⚠️ DISCLAIMER: These scripts may not work without prior dependencies and libraries
+
 Random (and perhaps useful) scripts live in the repo ⬆️
 
 Various (and also perhaps useful) one-liners live here ⬇️
@@ -32,4 +34,9 @@ wgrib2 hour1.grib2 -rpn sto_1 -import_grib hour2.grib2 -rpn sto_2 -set_grib_type
 ```
 gdalbuildvrt mosaic.vrt *.tif
 gdalwarp -srcnodata 0.0 -dstnodata 0.0 -r near -ot UInt16 -multi -wo "NUM_THREADS=ALL_CPUS" -co "COMPRESS=DEFLATE" -co "BIGTIFF=YES" mosaic.vrt mosaic.tif
+```
+
+**Convert NetCDF to GRIB2**
+```
+
 ```
