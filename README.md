@@ -38,5 +38,5 @@ gdalwarp -srcnodata 0.0 -dstnodata 0.0 -r near -ot UInt16 -multi -wo "NUM_THREAD
 
 **Convert NetCDF to GRIB2**
 ```
-
+cdo -f grb2 copy input.nc output.grb
 ```
