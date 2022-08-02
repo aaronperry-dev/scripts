@@ -28,7 +28,7 @@ wgrib2 input.grib2 -match some_variable -for_n 1:1 -grib output.grib2
 wgrib2 hour1.grib2 -rpn sto_1 -import_grib hour2.grib2 -rpn sto_2 -set_grib_type same -rpn "rcl_1:0.5:*:rcl_2:0.5:*:+" -set_scaling same same -grib_out hour1p5.grib2
 ```
 
-**Create composite from multiple satellite rasters**
+**Create mosaic from multiple rasters**
 ```
 gdalbuildvrt mosaic.vrt *.tif
 gdalwarp -srcnodata 0.0 -dstnodata 0.0 -r near -ot UInt16 -multi -wo "NUM_THREADS=ALL_CPUS" -co "COMPRESS=DEFLATE" -co "BIGTIFF=YES" mosaic.vrt mosaic.tif
