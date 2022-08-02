@@ -1,7 +1,6 @@
 Random (and perhaps useful) scripts live in the repo ⬆️
 
-
-Random (and also perhaps useful) one-liners live here ⬇️
+Various (and also perhaps useful) one-liners live here ⬇️
 
 **Reproject and reinterpolate a GRIB2 file using another grib2 file:**
 ```
