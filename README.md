@@ -12,8 +12,8 @@ wgrib2 input.grib2 -set_grib_type same -new_grid_winds grid -new_grid_interpolat
 wget -O - ${inventory} > /tmp/file.inv
 cat ${inv_file} | grep cf | grep sfc | grep 'tp' | cut -d ":" -f11-14 | sed 's/,/ /g' | sed 's/"/ /g' > /tmp/file
 
-byte_tpa=`cat /tmp/file | grep tp | awk '{print $4}'`
-byte_tpb=`cat /tmp/file | grep tp | awk '{print $4+$7-1}'`
+byte_tpa=`cat /tmp/file | grep 'some_variable' | awk '{print $4}'`
+byte_tpb=`cat /tmp/file | grep 'some_variable' | awk '{print $4+$7-1}'`
 
 curl -k -H "Connection: keep-alive" -H "User-Agent: Mozilla/5.0" -H "Accept-Language: en-US" --range ${byte_tpa}-${byte_tpb} input.grib2 --output output.grib2
 ```
