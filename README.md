@@ -40,3 +40,13 @@ gdalwarp -srcnodata 0.0 -dstnodata 0.0 -r near -ot UInt16 -multi -wo "NUM_THREAD
 ```
 cdo -f grb2 copy input.nc output.grb
 ```
+
+**Convert XYZ File to GeoTIFF to GRIB2**
+```
+gdal_translate -of GTiff -a_srs EPSG:4326 -tr 0.25 0.25 input.xyz output.tif
+gdal_translate -of netCDF output.tif output.nc
+ncrename -v Band1,some_variable_name output.nc
+cdo -f grb copy output.nc output.grib
+cdo -f grb2 copy output.grib output.grib2.bin
+wgrib2 output.grib2.bin -set_date YYYYMMDDHH -set_ftime "1 hour fcst" -grib output.grib2
+```
