@@ -2,7 +2,7 @@ Random (and perhaps useful) scripts live in the repo ⬆️
 
 Various (and also perhaps useful) one-liners live here ⬇️
 
-**Reproject and reinterpolate a GRIB2 file using another grib2 file:**
+**Reproject and reinterpolate a GRIB2 file using another GRIB2 file as a template:**
 ```
 wgrib2 input.grib2 -set_grib_type same -new_grid_winds grid -new_grid_interpolation bilinear -new_grid `grid_defn.pl template.grib2` output.grib2
 ```
